@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: 7b658745d4f3fdf49b81baa5a3af5247
+timeCreated: 1501078725
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PuffinFlightattemptjune25_0
+    21300002: PuffinFlightattemptjune25_1
+    21300004: PuffinFlightattemptjune25_2
+    21300006: PuffinFlightattemptjune25_3
+    21300008: PuffinFlightattemptjune25_4
+    21300010: PuffinFlightattemptjune25_5
+    21300012: PuffinFlightattemptjune25_6
+    21300014: PuffinFlightattemptjune25_7
+    21300016: PuffinFlightattemptjune25_8
+    21300018: PuffinFlightattemptjune25_9
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PuffinFlightattemptjune25_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 225
+        width: 256
+        height: 389
+      alignment: 9
+      pivot: {x: 0.48632812, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: 187.5}
+        - {x: -124.5, y: 23.5}
+        - {x: -124.5, y: -187.5}
+        - {x: 124.5, y: -187.5}
+        - {x: 124.5, y: 187.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightattemptjune25_1
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 240
+        width: 259
+        height: 379
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5065963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: 187}
+        - {x: -123.5, y: -39}
+        - {x: -124.5, y: -45}
+        - {x: -124.5, y: -187}
+        - {x: 123.5, y: -187}
+        - {x: 124.5, y: -184}
+        - {x: 124.5, y: 101}
+        - {x: 89.5, y: 187}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightattemptjune25_2
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 266
+        width: 27.600159
+        height: 29.300018
+      alignment: 9
+      pivot: {x: 0.49637437, y: 0.4061429}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5, y: 9.5}
+        - {x: -8.5, y: -2.5}
+        - {x: -8.5, y: -9.5}
+        - {x: 8.5, y: -9.5}
+        - {x: 8.5, y: 0.5}
+        - {x: 4.5, y: 9.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightattemptjune25_3
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 57
+        width: 629
+        height: 200
+      alignment: 9
+      pivot: {x: 0.49920508, y: 0.5025}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48.13434, y: 73.93005}
+        - {x: -305.34088, y: -8.022888}
+        - {x: -308, y: -19.499481}
+        - {x: -160.68015, y: -87.295364}
+        - {x: 84.263916, y: -91.58032}
+        - {x: 186.909, y: -55.38584}
+        - {x: 308, y: 2.6373138}
+        - {x: 308, y: 93.5}
+      - - {x: 305, y: 90.5}
+        - {x: 307, y: 88.5}
+        - {x: 308, y: 88.5}
+        - {x: 308, y: 93.5}
+        - {x: 305, y: 93.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightattemptjune25_4
+      rect:
+        serializedVersion: 2
+        x: 673.4274
+        y: 188.99998
+        width: 84.71771
+        height: 65.572556
+      alignment: 9
+      pivot: {x: 0.23293193, y: 0.53372985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: -28.5}
+        - {x: -35, y: -28.5}
+        - {x: -35, y: -19.5}
+        - {x: -37, y: -17.5}
+        - {x: -38, y: -17.5}
+      - - {x: -38, y: 28.5}
+        - {x: -38, y: 2.5}
+        - {x: -30, y: -28.5}
+        - {x: 38, y: -28.5}
+        - {x: 38, y: -7.5}
+        - {x: 10, y: 21.5}
+        - {x: -17, y: 28.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightattemptjune25_5
+      rect:
+        serializedVersion: 2
+        x: 682.70056
+        y: 160.30003
+        width: 76.29944
+        height: 35.699966
+      alignment: 9
+      pivot: {x: 0.22122248, y: 0.7830181}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 3}
+        - {x: -31, y: -3}
+        - {x: 31, y: -3}
+        - {x: 31, y: 3}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightattemptjune25_6
+      rect:
+        serializedVersion: 2
+        x: 679.7463
+        y: 153.31987
+        width: 79.25372
+        height: 34.487137
+      alignment: 9
+      pivot: {x: 0.5268361, y: 0.4981605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.5, y: 12.5}
+        - {x: -30.5, y: 12.5}
+        - {x: -36.5, y: -4.5}
+        - {x: -36.5, y: -12.5}
+        - {x: -0.5, y: -12.5}
+        - {x: 26.5, y: -1.5}
+        - {x: 29.5, y: 0.5}
+        - {x: 36.5, y: 7.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightattemptjune25_7
+      rect:
+        serializedVersion: 2
+        x: 674.3
+        y: 116.50001
+        width: 29.200012
+        height: 26.599998
+      alignment: 9
+      pivot: {x: 0.5034248, y: 0.48872155}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 7.5}
+        - {x: -9, y: 6.5}
+        - {x: -9, y: -5.5}
+        - {x: -7, y: -7.5}
+        - {x: 7, y: -7.5}
+        - {x: 9, y: -5.5}
+        - {x: 9, y: 5.5}
+        - {x: 7, y: 7.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightattemptjune25_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 34
+        width: 102
+        height: 36
+      alignment: 9
+      pivot: {x: 0.76633716, y: 0.7037716}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 11}
+        - {x: -44.5, y: 8}
+        - {x: -44.5, y: -5}
+        - {x: -38.5, y: -11}
+        - {x: -2.5, y: -11}
+        - {x: 44.5, y: -2}
+        - {x: 44.5, y: 11}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightattemptjune25_9
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 102
+        height: 29
+      alignment: 9
+      pivot: {x: 0.80079925, y: 0.588904}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 11}
+        - {x: -44.5, y: 8}
+        - {x: -44.5, y: -10}
+        - {x: -43.5, y: -11}
+        - {x: 5.5, y: -11}
+        - {x: 44.5, y: -1}
+        - {x: 44.5, y: 9}
+        - {x: 31.5, y: 11}
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 98227493368633
+  assetBundleName: 
+  assetBundleVariant: 

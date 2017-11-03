@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 8a0402c1ce314944b8a4f45fcb5c9c66
+timeCreated: 1493567527
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PuffinFlightSpriteAtlas1_0
+    21300002: PuffinFlightSpriteAtlas1_1
+    21300004: PuffinFlightSpriteAtlas1_2
+    21300006: PuffinFlightSpriteAtlas1_3
+    21300008: PuffinFlightSpriteAtlas1_4
+    21300010: PuffinFlightSpriteAtlas1_5
+    21300012: PuffinFlightSpriteAtlas1_6
+    21300014: PuffinFlightSpriteAtlas1_7
+    21300016: PuffinFlightSpriteAtlas1_8
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 800
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PuffinFlightSpriteAtlas1_0
+      rect:
+        serializedVersion: 2
+        x: 269.2711
+        y: 355
+        width: 261.69296
+        height: 385.00006
+      alignment: 9
+      pivot: {x: 0.4976401, y: 0.012544149}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightSpriteAtlas1_1
+      rect:
+        serializedVersion: 2
+        x: 656.60693
+        y: 381.2009
+        width: 26.895203
+        height: 30.004395
+      alignment: 9
+      pivot: {x: 0.49066493, y: 0.37949762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightSpriteAtlas1_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 174.56613
+        width: 626.7685
+        height: 197.49942
+      alignment: 9
+      pivot: {x: 0.5107099, y: 0.5550782}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightSpriteAtlas1_3
+      rect:
+        serializedVersion: 2
+        x: 683.6543
+        y: 303.65436
+        width: 85.34564
+        height: 66.34564
+      alignment: 9
+      pivot: {x: 0.24047506, y: 0.4292852}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightSpriteAtlas1_4
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 295.10004
+        width: 71.599976
+        height: 15.299988
+      alignment: 9
+      pivot: {x: 0.5097767, y: 0.51633793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightSpriteAtlas1_5
+      rect:
+        serializedVersion: 2
+        x: 689.0467
+        y: 268.38275
+        width: 83.95331
+        height: 34.968872
+      alignment: 9
+      pivot: {x: 0.24574497, y: 0.5727052}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightSpriteAtlas1_6
+      rect:
+        serializedVersion: 2
+        x: 684.6949
+        y: 231.77493
+        width: 28.633484
+        height: 25.325989
+      alignment: 9
+      pivot: {x: 0.4995939, y: 0.48270836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightSpriteAtlas1_7
+      rect:
+        serializedVersion: 2
+        x: 28.703075
+        y: 150.02043
+        width: 99.52681
+        height: 33.1949
+      alignment: 9
+      pivot: {x: 0.90114105, y: 0.66881686}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PuffinFlightSpriteAtlas1_8
+      rect:
+        serializedVersion: 2
+        x: 105.285706
+        y: 109.24422
+        width: 99.93521
+        height: 32.561066
+      alignment: 9
+      pivot: {x: 0.9187159, y: 0.662908}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 97882433997545
+  assetBundleName: 
+  assetBundleVariant: 

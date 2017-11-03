@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: 61760baf96bf24d4cb6e5884e136f51c
+timeCreated: 1496845415
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: JIsland
+    21300002: Jbottom
+    21300004: Jwater
+    21300006: Jair
+    21300008: JWater
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 75
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JIsland
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 7056
+        width: 3655
+        height: 4343
+      alignment: 9
+      pivot: {x: 0.36401606, y: 0.43205008}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 943.7177, y: 40.160625}
+        - {x: 932.5886, y: 134.78123}
+        - {x: 821.2973, y: 279.49512}
+        - {x: 687.74774, y: 312.89062}
+        - {x: 543.0691, y: 118.08348}
+        - {x: 565.32733, y: -9.932636}
+        - {x: 492.988, y: 212.70409}
+        - {x: 609.8439, y: 290.62695}
+        - {x: 721.13513, y: 435.34082}
+        - {x: 721.13513, y: 657.97754}
+        - {x: 637.6667, y: 696.93896}
+        - {x: 387.2613, y: 708.0708}
+        - {x: 270.40543, y: 563.35693}
+        - {x: 337.1802, y: 435.34082}
+        - {x: 381.69672, y: 452.03857}
+        - {x: 392.82584, y: 463.1704}
+        - {x: 392.82584, y: 479.86816}
+        - {x: 392.82584, y: 435.34082}
+        - {x: 381.69672, y: 418.64307}
+        - {x: 342.74478, y: 318.45654}
+        - {x: 136.85588, y: 863.9165}
+        - {x: 103.4685, y: 1320.3218}
+        - {x: -1042.8318, y: 1988.2319}
+        - {x: -1499.1261, y: 2171.5}
+        - {x: -1827.4353, y: 2171.5}
+        - {x: -1827.4353, y: -2163.9429}
+        - {x: -1816.3063, y: -2169.5088}
+        - {x: 1827.5, y: -2169.5088}
+        - {x: 1827.5, y: 229.40184}
+        - {x: 943.7177, y: 207.13817}
+        - {x: 943.7177, y: 56.85838}
+        - {x: 949.2823, y: 34.594707}
+      - - {x: 776.7808, y: -93.42141}
+        - {x: 787.9099, y: -43.328144}
+        - {x: 793.4745, y: -26.63039}
+        - {x: 787.9099, y: -48.894062}
+        - {x: 787.9099, y: -71.15774}
+        - {x: 804.60364, y: -143.51466}
+        - {x: 832.42645, y: -154.6465}
+        - {x: 899.20123, y: -160.21242}
+        - {x: 821.2973, y: -304.9263}
+      - - {x: 893.63666, y: -4.3667183}
+        - {x: 888.0721, y: -9.932636}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Jbottom
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 6716
+        width: 7392
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3694.3467, y: 152.5}
+        - {x: -3694.3467, y: -146.77663}
+        - {x: -3688.7822, y: -152.34254}
+        - {x: 3696, y: -152.34254}
+        - {x: 3696, y: 152.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Jair
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 105
+        width: 7342
+        height: 4698
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JWater
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4770
+        width: 7371
+        height: 1813
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
