@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
 	public List<GameObject> Fish = new List<GameObject>();
 	public float waveSpeed = 2f;
 	public int fishCloseToPuffin = 0;
-	public float  puffinToMouthRange = 3f;
+	public float  puffinToMouthRange = .25f;
 	private Scene currentScene;
 	//private int numberofLevels = 5;
 	public int currentHighScore;

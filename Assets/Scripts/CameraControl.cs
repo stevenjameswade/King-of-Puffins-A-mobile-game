@@ -32,8 +32,9 @@ using System;
 		public float perspectiveZoomSpeed = .5f;
 		public float orthoZoomSpeed = .5f;
 		public float panSpeed = .01f;
+	public float minzoom = 6.57f;
+	public float maxZoom = 43.37006f;
 
-		private float maxZoom;
 	public Rect camWorldRect;
 
 
@@ -244,7 +245,7 @@ using System;
 				if (Camera.main.orthographic)
 				{
 					Camera.main.orthographicSize += deltaMagnitudediff * orthoZoomSpeed;
-					Camera.main.orthographicSize = Mathf.Clamp (Camera.main.orthographicSize, 6.57f, 43.37006f);
+				Camera.main.orthographicSize = Mathf.Clamp (Camera.main.orthographicSize, minzoom, maxZoom);//6.57f, 43.37006f);
 					deadzone.size = (new Vector2( Camera.main.orthographicSize* Camera.main.aspect *.45f, Camera.main.orthographicSize*.3f));
 					deadZoneposition = (new Vector2 (-deadzone.width / 2, -deadzone.height / 2));
 					deadzone.position = deadZoneposition;
@@ -262,7 +263,7 @@ using System;
 				{
 					Camera.main.orthographicSize += scrollSpeed * orthoZoomSpeed*10f;
 					//Camera.main.orthographicSize = Mathf.Max (Camera.main.orthographicSize, 6.57f);
-					Camera.main.orthographicSize = Mathf.Clamp (Camera.main.orthographicSize, 6.57f, 43.37006f);
+				Camera.main.orthographicSize = Mathf.Clamp (Camera.main.orthographicSize, minzoom, maxZoom);
 				// make this controllable outside of the script
 				deadzone.size = (new Vector2( Camera.main.orthographicSize* Camera.main.aspect *.45f, Camera.main.orthographicSize*.3f));//Camera.main.aspect *1.25f, Camera.main.orthographicSize*.8f
 					//Vector3 deadzoneCenter = Camera.main.ViewportToWorldPoint (new Vector3 (.5f, .5f, 0f));

@@ -14,13 +14,13 @@ public class puffinControl : MonoBehaviour {
 		public fishMovement movement;
 
 		public Rigidbody2D rb;
-		public CircleCollider2D collider;
+		public Collider2D collider;
 
 		public fishInMouth ( fishMovement m, Rigidbody2D r)
 		{
 			movement = m;
 			rb = r;
-			collider = rb.GetComponent<CircleCollider2D>();
+			collider = rb.GetComponent<Collider2D>();
 		}
 
 		public void turnOffMovement()
@@ -141,7 +141,7 @@ public class puffinControl : MonoBehaviour {
 
 		
 		//this makes sure puffin doesn't go too fast
-		Vector2.ClampMagnitude(rb2d.velocity, puffinMaxSpeed);
+		rb2d.velocity = Vector2.ClampMagnitude(rb2d.velocity, puffinMaxSpeed);
 		currentSpeed = rb2d.velocity.magnitude;
 		direction = ClickManager.instance.puffintoMouseDirection;
 		if (GameManager.instance.slider != null)
@@ -205,13 +205,13 @@ public class puffinControl : MonoBehaviour {
 						//if click below puffin
 						if (direction.y < 0)
 						{
-							rb2d.AddForce (direction * 50f, ForceMode2D.Impulse);
+							rb2d.AddForce (direction * 50/4f, ForceMode2D.Impulse);
 						}
 						//if click above puffin
 						if (direction.y > 0 && Input.GetMouseButton (0))
 						{
 							
-							rb2d.AddForce (new Vector2 (direction.x * 100f, direction.y * 70f), ForceMode2D.Impulse);
+							rb2d.AddForce (new Vector2 (direction.x * 100/4f, direction.y * 70/4f), ForceMode2D.Impulse);
 		
 						}
 						rb2d.velocity = Vector2.ClampMagnitude (rb2d.velocity, puffinFlySpeed);
@@ -291,14 +291,14 @@ public class puffinControl : MonoBehaviour {
 				airSupply = airSupply- speedBoostAirRate*Time.deltaTime;
 			} */
 
-			if (puffinState == playerState.swimming && (Input.touchCount == 2 ) && controllable) 
+			if (puffinState == playerState.swimming && (Input.touchCount == 2 ) && controllable) //This is the speed boost
 			{
 				//when two fingers are on the screen, this make puffin move to max speed
-				rb2d.AddForce (direction * 1000f, ForceMode2D.Impulse);
+				rb2d.AddForce (direction * 1000/4f, ForceMode2D.Impulse);
 
 				//make it use up your air faster
 				airSupply = airSupply- speedBoostAirRate*Time.deltaTime;
-				rb2d.velocity = Vector2.ClampMagnitude (rb2d.velocity, puffinSwimSpeed);
+				rb2d.velocity = Vector2.ClampMagnitude (rb2d.velocity, puffinMaxSpeed);
 			}
 
 
@@ -367,7 +367,7 @@ public class puffinControl : MonoBehaviour {
 
 	}
 
-	public void  stopRotate()// this doesn't work %100 because of lerp
+	public void  stopRotate(bool toSurface)// this doesn't work %100 because of lerp
 	{
 		rotate = false;
 		 float angle = 0f;
@@ -377,7 +377,7 @@ public class puffinControl : MonoBehaviour {
 			angle = 0f;
 		} else if (!facingRight)//facing left
 		{
-			if (rb2d.rotation < 0)
+			if (rb2d.rotation < 0 )//|| rb2d.rotation> 180)//I added the check to see if greater than 270 so it doesn't flip over.
 			{
 				angle = -180f;
 			} else
@@ -386,7 +386,14 @@ public class puffinControl : MonoBehaviour {
 			}
 
 		}
-		StartCoroutine (RotateToSurface (angle));
+		if (toSurface)
+		{
+			StartCoroutine (RotateToSurface (angle));
+		} else if (!toSurface)
+		{
+			rb2d.rotation = angle;
+			rb2d.freezeRotation = true;
+		}
 		//print (angle);
 		//rb2d.velocity = new Vector2 (rb2d.velocity.x, 0f);
 
@@ -394,7 +401,7 @@ public class puffinControl : MonoBehaviour {
 
 	IEnumerator RotateToSurface (float angle)
 	{
-		//print ("CoRoutine. Angle is " + angle);
+		print ("CoRoutine. Angle is " + angle +". Facing right? " + facingRight );
 	
 		rotate = false;
 		rb2d.freezeRotation = true;
@@ -403,23 +410,30 @@ public class puffinControl : MonoBehaviour {
 			//print ("broke from Co-routine");
 			yield break;
 		}
-
+		int i = 0;
 		//pay attention to this statement. I accidentally made it infinite once and it crashed unity. This checks 2 statements, it only runs when both are true. It is either 2 less than 0, or 360
-		while (Mathf.Abs (rb2d.rotation - angle) > 2f && Mathf.Abs (rb2d.rotation - angle - 360) > 2)// && puffinState == playerState.surface)
+		while (Mathf.Abs (rb2d.rotation - angle) > 2f && Mathf.Abs (rb2d.rotation - angle - 360) > 2 && i<100)// && puffinState == playerState.surface)
 		{
-			rb2d.rotation = Mathf.LerpAngle (rb2d.rotation, angle, 3f * Time.deltaTime);
+			//rb2d.rotation = angle;
+			//rb2d.transform.localEulerAngles = new Vector3 (0f, 0f, angle);
+			//flip ();
+			rb2d.rotation = Mathf.LerpAngle (rb2d.rotation, angle, 5f * Time.deltaTime);
 				//rb2d.MoveRotation (Mathf.LerpAngle (rb2d.rotation, angle, 10*rotSpeed * Time.deltaTime));
-				//print (rb2d.rotation);
-				//	print (Mathf.Abs (rb2d.rotation - angle));
+			print (i +"  "+10f*Time.deltaTime+ "Rotate toSurface Called. First Check = " + Mathf.Abs (rb2d.rotation - angle) + " 2ndCheck " + Mathf.Abs (rb2d.rotation - angle - 360) + " Rb2d.rotation = " + rb2d.rotation +" Angle goal is " + angle);
+			i++;	
+			//	print (Mathf.Abs (rb2d.rotation - angle));
 			//print("Iteration" + (Mathf.Abs (rb2d.rotation - angle-360)));
 			if (rotate || Input.GetMouseButton(0)) // I added the break when the mouse is clicked, otherwise the puffin tries to rotate to the first rotation even if you told it to go elsewhere later
 			{
-				//print ("broke from Co-routine");
+				print ("broke from Co-routine");
 				yield break;
 			}
 			yield return new WaitForFixedUpdate ();		
 		}
-		rb2d.MoveRotation (angle);
+		//print ("While statement finished. Angle is " + angle);
+		//rb2d.MoveRotation (angle);
+		rb2d.rotation = angle;
+		yield break; // added 09/18 I think I forgot to break from coroutine.
 		
 
 	}
@@ -487,8 +501,8 @@ public class puffinControl : MonoBehaviour {
 			currentFish.turnOffMovement();
 			currentFish.moveToMouth (fishHolders [ateFish.Count-1].transform);//[GameManager.instance.score].transform);
 
-			print ("Ate Fish");
-			print (ateFish.Count);
+			//print ("Ate Fish");
+			//print (ateFish.Count);
 			//currentFish.turn
 
 
@@ -506,7 +520,7 @@ public class puffinControl : MonoBehaviour {
 			loseFish ();
 			foreach (ContactPoint2D contact in other.contacts)
 			{
-				rb2d.AddForce (contact.normal * 500f, ForceMode2D.Impulse);
+				rb2d.AddForce (contact.normal * 500/4f, ForceMode2D.Impulse);
 			}
 
 		}
@@ -522,7 +536,7 @@ public class puffinControl : MonoBehaviour {
 				if (contact.point.y < rb2d.transform.position.y)
 				{
 					puffinState = setPuffinState(playerState.walking);
-					print ("Fly to walking state");
+					//print ("Fly to walking state");
 				}
 			}
 
@@ -536,7 +550,7 @@ public class puffinControl : MonoBehaviour {
 					if (!puffinInWater)
 					{
 						puffinState = setPuffinState (playerState.walking);
-						print ("surface to walking state");
+						//print ("surface to walking state");
 					}
 				}
 			}
@@ -579,7 +593,7 @@ public class puffinControl : MonoBehaviour {
 		if (other.name == "Water")
 		{
 			puffinInWater = true;
-			print ("Puffin in Water");
+			//print ("Puffin in Water");
 
 		}
 		if (other.name == "Air")
@@ -640,9 +654,9 @@ public class puffinControl : MonoBehaviour {
 		{
 			if (other.enabled)
 			{
-				print("Collider active");
+				//print("Collider active");
 				puffinInWater = false;
-				print ("Puffin not in Water");
+				//print ("Puffin not in Water");
 			}
 		}
 
@@ -681,13 +695,13 @@ public class puffinControl : MonoBehaviour {
 		{
 			rb2d.position = new Vector2 (rb2d.position.x, rb2d.position.y + .2f);
 			stuckOnGround = false;
-			print (stuckOnGround);
+			//print (stuckOnGround);
 
 		}
 		if (other.gameObject.name == "ocean bottom")
 		{
 			stuckOnGround = true;
-			print (stuckOnGround);
+			//print (stuckOnGround);
 		}
 
 		if (other.gameObject.name == "Nest")
@@ -719,7 +733,7 @@ public class puffinControl : MonoBehaviour {
 			anim.SetTrigger ("toStanding");
 			anim.SetInteger ("puffinState", 3);
 		
-			stopRotate ();
+			stopRotate (true);
 
 			break;
 
@@ -727,8 +741,7 @@ public class puffinControl : MonoBehaviour {
 			//print ("Walking player State");
 			anim.SetTrigger ("toStanding");
 			anim.SetInteger ("puffinState", 3);
-
-			stopRotate ();
+			stopRotate (false);
 			break;
 
 		case playerState.outOfAir:
@@ -737,7 +750,7 @@ public class puffinControl : MonoBehaviour {
 
 		
 		default:
-			print ("default switch statement");
+			//print ("default switch statement");
 			break;
 		}
 		return newState;
@@ -754,14 +767,14 @@ public class puffinControl : MonoBehaviour {
 			if (puffinInWater && direction.y < 0)// && Input.touchCount>0)
 			{
 				puffinState = setPuffinState (playerState.swimming);
-				print ("fly to swim");
+				//print ("fly to swim");
 			}
 
 			if (Input.touchCount < 1 && puffinInWater && rb2d.velocity.sqrMagnitude < surfacingSpeed) //if no one is touching, make puffin land on surface
 			{
 				
 				puffinState = setPuffinState (playerState.surface);
-				print ("fly to surface");
+				//print ("fly to surface");
 			}
 
 			
@@ -774,13 +787,13 @@ public class puffinControl : MonoBehaviour {
 			{
 				puffinState = setPuffinState (playerState.flying);
 
-				print ("swim tp fly");
+				//print ("swim tp fly");
 			}
 
 			if (Input.touchCount < 1 && puffinInAir && puffinInWater && rb2d.velocity.sqrMagnitude < surfacingSpeed) //if no one is touching, make puffin surface
 			{
 				puffinState = setPuffinState (playerState.surface);
-				print ("swim to surface");
+				//print ("swim to surface");
 			}
 			break;
 
@@ -788,26 +801,26 @@ public class puffinControl : MonoBehaviour {
 
 
 
-			anim.SetFloat ("swimSpeed", Mathf.Abs (currentSpeed));
+			anim.SetFloat ("swimSpeed", Mathf.Abs (currentSpeed*4f));
 			if (Input.touchCount == 0) //this makes it so the puffin doesn't bob too much, or slide off of the screen.
 			{
 				rb2d.velocity = Vector2.Lerp (rb2d.velocity, Vector2.zero, .8f * Time.deltaTime);
 			}
 			
-			if (ClickManager.instance.puffinToMouse.y < -6f && Input.GetMouseButton (0))//direction.y < -.7f 
+			if (ClickManager.instance.puffinToMouse.y < -6/4f && Input.GetMouseButton (0))//direction.y < -.7f 
 			{
 				anim.SetTrigger ("dive");
 				rb2d.AddForce (direction * 20, ForceMode2D.Impulse);
 				puffinState = setPuffinState (playerState.swimming);
 				startRotate ();
-				print ("surface to swim");
-			} else if (ClickManager.instance.puffinToMouse.y > 6f && Input.GetMouseButton (0))
+				//print ("surface to swim");
+			} else if (ClickManager.instance.puffinToMouse.y > 6/4f && Input.GetMouseButton (0))
 			{
-				rb2d.velocity = (direction * 5);
+				rb2d.velocity = (direction * 5/4);
 				rb2d.AddForce (direction * 100, ForceMode2D.Impulse);
 				puffinState = setPuffinState (playerState.flying);
 				startRotate ();
-				print ("surface tp fly");
+				//print ("surface tp fly");
 			}
 			/*if (!puffinInWater)
 			{
@@ -818,10 +831,12 @@ public class puffinControl : MonoBehaviour {
 		case playerState.outOfAir:
 			if (Input.GetMouseButton (0) && controllable)
 			{
-				rb2d.AddForce ((new Vector2 (direction.x * 20f, direction.y * 10f)), ForceMode2D.Impulse);
+				rb2d.AddForce ((new Vector2 (direction.x * 20 / 4f, direction.y * 10 / 4f)), ForceMode2D.Impulse);
+				rb2d.velocity = Vector2.ClampMagnitude (rb2d.velocity, puffinOutOfAirSpeed);
 
-			}
-			Vector2.ClampMagnitude (rb2d.velocity, puffinOutOfAirSpeed);
+			} 
+
+			//print (rb2d.velocity.magnitude);
 			if (airSupply > 5f)
 			{
 				anim.SetBool ("outOfAir", false);
@@ -844,20 +859,20 @@ public class puffinControl : MonoBehaviour {
 			break;
 
 		case playerState.walking:
-			anim.SetFloat ("swimSpeed", Mathf.Abs (currentSpeed));
+			anim.SetFloat ("swimSpeed", Mathf.Abs (currentSpeed*4f));
 			if (Input.touchCount == 0) //this makes it so the puffin doesn't bob too much, or slide off of the screen.
 			{
 				//rb2d.velocity = Vector2.Lerp (rb2d.velocity, Vector2.zero, .8f * Time.deltaTime);
 			}
-			if (ClickManager.instance.puffinToMouse.y > 6f && Input.GetMouseButton (0))
+			if (ClickManager.instance.puffinToMouse.y > 6/4f && Input.GetMouseButton (0))
 			{
 				rb2d.velocity = (direction * 5);
 				rb2d.AddForce (direction * 100, ForceMode2D.Impulse);
 				puffinState = setPuffinState (playerState.flying);
 				startRotate ();
-				print ("walk to fly");
+				//print ("walk to fly");
 			}
-			if (rb2d.velocity.y < -5f && Input.GetMouseButton (0))// if puffin is falling fast enough, change to flying
+			if (rb2d.velocity.y < -5/4f && Input.GetMouseButton (0))// if puffin is falling fast enough, change to flying
 			{
 				
 				puffinState = setPuffinState (playerState.flying);
@@ -894,8 +909,8 @@ public class puffinControl : MonoBehaviour {
 
 	public void speedBoost()
 	{
-		rb2d.AddForce ( direction * 1000f, ForceMode2D.Impulse);
-		print ("boost");
+		rb2d.AddForce ( direction * 1000/4f, ForceMode2D.Impulse);
+		//print ("boost");
 	}
 
 	public void loseFish()
