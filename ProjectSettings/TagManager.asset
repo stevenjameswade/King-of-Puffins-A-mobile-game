@@ -9,6 +9,7 @@ TagManager:
   - fishBoundary
   - deadFish
   - enemy
+  - airbubble
   layers:
   - Default
   - TransparentFX

@@ -69,7 +69,7 @@ public class puffinControl : MonoBehaviour {
 
 
 	private Rigidbody2D rb2d;
-	private Collider2D capsule;
+	//private Collider2D capsule;
 
 	private Vector2 startPosition;
 	private Vector2 direction; //the normal of puffin to mouse
@@ -125,7 +125,7 @@ public class puffinControl : MonoBehaviour {
 	{
 		//print (airSupply);
 		rb2d = GetComponent<Rigidbody2D> ();
-		capsule = GetComponent<Collider2D> ();
+		//capsule = GetComponent<Collider2D> ();
 		anim = GetComponent<Animator> ();
 		startPosition = rb2d.position;
 	}
@@ -522,6 +522,11 @@ public class puffinControl : MonoBehaviour {
 			{
 				rb2d.AddForce (contact.normal * 500/4f, ForceMode2D.Impulse);
 			}
+
+		}
+		if (other.gameObject.CompareTag("airbubble"))
+		{
+			airSupply = airSupply + 10f;
 
 		}
 		/*if (other.gameObject.name == "Nest")

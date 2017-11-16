@@ -10,9 +10,9 @@ public class EnemySwimmer : MonoBehaviour {
 
 	private Vector2 direction;
 	private Vector2 startPosition;
-	public float patrolSpeed = 5f;
-	public float pursuitSpeed = 15f;
-	public float pursuitRange = 20f;
+	public float patrolSpeed = 5/4f;
+	public float pursuitSpeed = 15/4f;
+	public float pursuitRange = 20/4f;
 	private Vector2 enemyToPuffin;
 	private float idleTimer = 10f;
 
