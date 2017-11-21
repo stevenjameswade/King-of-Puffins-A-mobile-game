@@ -90,9 +90,10 @@ public class EnemySwimmer : MonoBehaviour {
 
 		case waterEnemyState.patrol:
 			rb2d.velocity = direction * patrolSpeed;
-			if (((Vector2)transform.position - startPosition).sqrMagnitude > 10f * 10f && changeDir == false)
+			if (((Vector2)transform.position - startPosition).sqrMagnitude > 10f * 10f && changeDir == false) // If Enemy travels farther than maximum range, calculate new direction
 			{
-				direction = -direction;
+				//direction = -direction;
+				direction = patrolDirection();
 				//print ("Switch");
 				changeDir = true;
 				//startPosition = rb2d.position;
@@ -187,6 +188,31 @@ public class EnemySwimmer : MonoBehaviour {
 	{
 		Vector2 Rand = new Vector2 (UnityEngine.Random.Range(-1.0f, 1.0f), UnityEngine.Random.Range(-1.0f, 1.0f));
 		return Rand.normalized;
+	}
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		//fishState = setFishState(FishMode.swim);
+		//direction = -direction;
+
+
+		if (!other.gameObject.CompareTag ("pickup")) //check // other.gameObject.CompareTag ("fishBoundary")
+		{
+			startPosition = rb2d.position;
+
+		}
+
+		foreach (ContactPoint2D contact in other.contacts)
+		{
+					
+			if (state != waterEnemyState.pursue) //check
+			{
+				direction = contact.normal;
+
+			}
+	
+		}
+
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
